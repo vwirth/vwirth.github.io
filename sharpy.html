@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="ShaRPy creates personalized digital twins of hands in RGB-D sequneces and estimates the uncertainty that remains in the process.">
+  <meta name="keywords" content="ShaRPy, pose and shape estimation, uncertainty, musculoskeletal diseases">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShaRPy: Shape Reconstruction and Hand Pose Estimation from RGB-D with Uncertainty</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./sharpy/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./sharpy/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./sharpy/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./sharpy/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./sharpy/static/css/index.css">
+  <!-- <link rel="icon" href="./sharpy/static/images/favicon.png"> -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🖐🏻</text></svg>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./sharpy/static/js/fontawesome.all.min.js"></script>
+  <script src="./sharpy/static/js/bulma-carousel.min.js"></script>
+  <script src="./sharpy/static/js/bulma-slider.min.js"></script>
+  <script src="./sharpy/static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">ShaRPy: Shape Reconstruction and Hand Pose Estimation from RGB-D
+              with Uncertainty</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://vwirth.github.io">Vanessa Wirth</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.medizin3.uk-erlangen.de/forschung/arbeitsgruppen/ag-dr-a-m-liphardt/">Anna-Maria
+                  Liphardt</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.ltd.tf.fau.de/ltd/institute/team/coppers-birte/">Birte Coppers</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.lhft.eei.fau.de/en/archive/person/braeunig-johanna-m-sc">Johanna
+                  Bräunig</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.ltd.tf.fau.de/person/simon-heinrich/">Simon Heinrich</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.ltd.tf.fau.de/person/sigrid-leyendecker/">Sigrid Leyendecker</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a
+                  href="https://www.medizin3.uk-erlangen.de/forschung/arbeitsgruppen/ag-pd-dr-a-kleyer-und-pd-dr-d-simon/">Arnd
+                  Kleyer</a><sup>1,2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.fau.eu/fau/organisation-and-committees/executive-board/prof-dr-georg-schett/">Georg
+                  Schett</a><sup>1,2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.lhft.eei.fau.de/archive/person/prof-dr-ing-martin-vossiek">Martin
+                  Vossiek</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://eggerbernhard.ch/">Bernhard Egger</a><sup>1</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.lgdv.tf.fau.de/person/marc-stamminger/">Marc Stamminger</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Friedrich-Alexander-Universität Erlangen-Nürnberg,</span>
+              <span class="author-block"><sup>2</sup>University Hospital Erlangen</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://openaccess.thecvf.com/content/ICCV2023W/CVAMD/html/Wirth_ShaRPy_Shape_Reconstruction_and_Hand_Pose_Estimation_from_RGB-D_with_ICCVW_2023_paper.html"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./sharpy/docs/supplementary.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./sharpy/static/docs/poster.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2303.10042" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!--                 <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/vwirth/sharpy/" class="external-link button is-normal is-rounded is-grey">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (TBD)</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <!--                 <span class="link-block">
+                  <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a> -->
+              </div>
+
+              <h2 style="text-align: center; font-size:1.6em; font-weight: 800;">ICCVW 2023</h2>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay controls muted loop playsinline height="100%">
+          <source src="./sharpy/static/videos/results.webm" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          ShaRPy estimates the pose and shape parameters of a digital hand model, and estimates the uncertainty that
+          remains in those in order to discard unreliable measurements.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-0000">
+            <video poster="" id="0000-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0000_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0000-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0000_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+          <!-- <div class="item item-0001">
+            <video poster="" id="0001-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0001_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0001-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0001_sharpy.webm" type="video/mp4">
+            </video>
+          </div> -->
+          <div class="item item-0002">
+            <video poster="" id="0002-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0002_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0002-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0002_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-0004">
+            <video poster="" id="0004-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0004_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0004-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0004_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-0003">
+            <video poster="" id="0003-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0003_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0003-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0003_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-0005">
+            <video poster="" id="0005-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0005_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0005-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0005_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-0006">
+            <video poster="" id="0006-rgb" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0006_rgb.webm" type="video/mp4">
+            </video>
+            <video poster="" id="0006-sharpy" autoplay muted loop playsinline height="20%">
+              <source src="./sharpy/static/videos/0006_sharpy.webm" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Despite their potential, markerless hand tracking technologies are not yet applied
+              in practice to the diagnosis or monitoring of the activity in inflammatory musculoskeletal diseases.
+              One reason is that the focus of most methods lies in the reconstruction of coarse,
+              plausible poses, whereas in the clinical context, accurate, interpretable, and reliable results are
+              required.
+            </p>
+            <p>
+              Therefore, we propose ShaRPy, the first RGB-D <b>Sha</b>pe <b>R</b>econstruction and hand <b>P</b>ose
+              tracking system,
+              which provides uncertaint<b>y</b> estimates of the computed pose,
+              e.g., when a finger is hidden or its estimate is inconsistent with the observations in the input,
+              to guide clinical decision-making. Besides pose, ShaRPy approximates a personalized hand shape,
+              promoting a more realistic and intuitive understanding of its digital twin.
+              Our method requires only a light-weight setup with a single consumer-level RGB-D camera
+              yet it is able to distinguish similar poses with only small joint angle deviations in a
+              metrically accurate space.
+              This is achieved by combining a data-driven dense correspondence predictor with traditional energy
+              minimization.
+              To bridge the gap between interactive visualization and biomedical simulation we leverage a parametric
+              hand model in
+              which we incorporate biomedical constraints and optimize for both, its pose and hand shape.
+            </p>
+            <p>
+              We evaluate ShaRPy on a keypoint detection benchmark and show qualitative results of hand function
+              assessments for activity monitoring of musculoskeletal diseases.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="hero is-light is-small">
+    <div class="hero-body is-light">
+      <!-- <div class="container"> -->
+      <div class="columns">
+        <div class="column is-one-quarter"></div>
+        <div class="column is-one-quarter">
+          <h2 class="title is-5" style="text-align:center;">Poster</h2>
+
+          <a href="./sharpy/static/poster.pdf">
+            <img
+              style="width:70%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+              src=" ./sharpy/static/docs/poster_thumbnail.png" />
+          </a>
+
+        </div>
+
+        <div class="column is-one-quarter">
+          <h2 class="title is-5" style="text-align:center;">Paper</h2>
+          <a href="./sharpy/static/paper.pdf">
+            <img
+              style="width:79%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+              src=" ./sharpy/static/docs/paper_thumbnail.png" />
+          </a>
+        </div>
+      </div>
+      <div class="column is-one-quarter"></div>
+    </div>
+
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Presentation</h2>
+          <!-- <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div> -->
+          <video id="results" controls muted loop playsinline height="100%">
+            <source src="./sharpy/static/videos/23iccv_sharpy_hd.webm" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@InProceedings{Wirth_2023_ICCV,
+          author    = {Wirth, Vanessa and Liphardt, Anna-Maria and Coppers, Birte and Br\"aunig, Johanna and Heinrich, Simon and Leyendecker, Sigrid and Kleyer, Arnd and Schett, Georg and Vossiek, Martin and Egger, Bernhard and Stamminger, Marc},
+          title     = {ShaRPy: Shape Reconstruction and Hand Pose Estimation from RGB-D with Uncertainty},
+          booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV) Workshops},
+          month     = {October},
+          year      = {2023},
+          pages     = {2625-2633}
+      }</code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="Acknowledgements">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgements</h2>
+
+      <p>
+        This work was funded by the Deutsche
+        Forschungsgemeinschaft (DFG, German Research Foundation) – SFB 1483 – Project-ID 442419336, <a
+          href="https://empkins.de">EmpkinS</a>.
+      </p>
+      <p>
+        This work used the German Research Foundation (DFG)
+        funded major instrument (reference number INST90 / 985-
+        1 FUGG) at the Institute of Applied Dynamics (Sigrid
+        Leyendecker), Friedrich-Alexander Universität Erlangen-
+        Nürnberg Germany.
+      </p>
+      <p>
+        The authors gratefully acknowledge
+        the scientific support and HPC resources provided by the
+        Erlangen National High Performance Computing Center of
+        the Friedrich-Alexander-Universität Erlangen-Nürnberg.
+      </p>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./sharpy/static/docs/paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/vwirth" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Source code of this website is stolen from the <a
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
+              project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
