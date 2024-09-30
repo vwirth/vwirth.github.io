@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="theme-dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="We propose a spatial calibration based on an optical depth sensor and a near-field MIMO radar.">
+    <meta name="keywords" content="Spatial Calibration, MIMO, Near-Field, Imaging Radar, Sensor Fusion, Depth Camera">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automatic Spatial Calibration of Near-Field MIMO Radar With Respect to Optical Depth Sensors</title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./nfcalib/static/css/bulma.min.css">
+    <link rel="stylesheet" href="./nfcalib/static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./nfcalib/static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./nfcalib/static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./nfcalib/static/css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/nuclear/bulmaswatch.min.css">
+    <!-- <link rel="icon" href="./sharpy/static/images/favicon.png"> -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>📡</text></svg>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./nfcalib/static/js/fontawesome.all.min.js"></script>
+    <script src="./nfcalib/static/js/bulma-carousel.min.js"></script>
+    <script src="./nfcalib/static/js/bulma-slider.min.js"></script>
+    <script src="./nfcalib/static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Automatic Spatial Calibration of Near-Field MIMO Radar
+                            With Respect to Optical Depth Sensors</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a class="href-link" href="https://vwirth.github.io">Vanessa
+                                    Wirth</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://www.lhft.eei.fau.de/en/archive/person/braeunig-johanna-m-sc">Johanna
+                                    Bräunig</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                Danti Khouri<sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                Florian Gutsche<sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://www.lhft.eei.fau.de/archive/person/prof-dr-ing-martin-vossiek">Martin
+                                    Vossiek</a><sup>1</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://weyri.ch/">Tim Weyrich</a><sup>1,2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://www.lgdv.tf.fau.de/person/marc-stamminger/">Marc
+                                    Stamminger</a><sup>1</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>Friedrich-Alexander-Universität
+                                Erlangen-Nürnberg,</span>
+                            <span class="author-block"><sup>2</sup>University College London</span>
+                        </div>
+                        <h2 style="text-align: center; font-size:1.6em; font-weight: 800;">IROS 2024</h2>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="./nfcalib/static/docs/paper.pdf"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="./nfcalib/static/videos/supplementary.mp4"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Supplementary</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fa fa-play"></i>
+                                        </span>
+                                        <span>Presentation (tbd)</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/html/2403.10981v2"
+                                        class="external-link button is-normal is-rounded is-grey">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <div class="columns is-centered is-vcentered has-text-right">
+                    <h2 class="subtitle has-text-right" style="margin-right:5%">
+                        We developed a novel spatial calibration method, specifically targeted to near-field
+                        high-resolution
+                        imaging radars, to be calibrated with an optical depth camera, such that we can spatially
+                        fuse
+                        optical and radio-frequency data with millimeter precision.
+                    </h2>
+                    <div class="column is-three-fifths has-text-right is-left">
+                        <img class="is-left" style="width:100%;margin-left:auto;margin-right:auto;display:block"
+                            src=" ./nfcalib/static/images/teaser_wide.png" />
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="hero is-light is-small">
+        <div class="hero-body highlight">
+            <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item item-0000">
+                        <video poster="" id="0000" autoplay muted loop playsinline height="20%">
+                            <source src="./nfcalib/static/videos/0000.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-0001">
+                        <video poster="" id="0001" autoplay muted loop playsinline height="20%">
+                            <source src="./nfcalib/static/videos/0001.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-0002">
+                        <video poster="" id="0002" autoplay muted loop playsinline height="20%">
+                            <source src="./nfcalib/static/videos/0002.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="item item-0003">
+                        <video poster="" id="0003" autoplay muted loop playsinline height="20%">
+                            <source src="./nfcalib/static/videos/0003.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered is-vcentered">
+
+                <div class="column is-two-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Despite an emerging interest in MIMO radar, the utilization of its complementary strengths
+                            in combination with optical depth sensors has so far been limited to far-field applications,
+                            due to the challenges that arise from mutual sensor calibration in the near field. In fact,
+                            most related approaches in the autonomous industry propose target-based calibration methods
+                            using corner reflectors that have proven to be unsuitable for the near field.
+                        </p>
+                        <p>
+                            In contrast, we propose a novel, joint calibration approach for optical RGB-D sensors and
+                            MIMO radars that is designed to operate in the radar's near-field range, within decimeters
+                            from the sensors. Our pipeline consists of a bespoke calibration target, allowing for
+                            automatic target detection and localization, followed by the spatial calibration of the two
+                            sensor coordinate systems through target registration.
+                        </p>
+                        <p>
+                            We validate our approach using two different depth sensing technologies from the optical
+                            domain. The experiments show the efficiency and accuracy of our calibration for various
+                            target displacements, as well as its robustness of our localization in terms of signal
+                            ambiguities.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="column is-three-fifths has-text-right is-left is-vcentered">
+                    <img class="is-left is-vcentered"
+                        style="width:100%;margin-left:auto;margin-right:auto;display:block"
+                        src=" ./nfcalib/static/images/graphical_abstract.png" />
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+
+    <!-- <section class="section">
+        <div class="container is-max-desktop content">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Presentation</h2>
+                    <video id="results" controls muted loop playsinline height="100%">
+                        <source src="./sharpy/static/videos/23iccv_sharpy.webm" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="section">
+        <div class="container is-max-desktop content">
+            <h2 class="title is-3 has-text-centered">Calibration Target</h2>
+            <div class="columns is-centered is-vcentered has-text-centered">
+                <div class="column is-four-fifths has-text-right" style="padding-right:5%">
+                    <h5 style="padding-right:0%">Traditional far-field calibration target</h5>
+                    <video id="target" autoplay muted loop playsinline height="2.5%" width="50%">
+                        <source src="./nfcalib/static/videos/corner.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+                <!-- <div class="column is-one-fifth is-vcentered">
+                    <img style="width:100%;margin-left:auto;margin-right:auto;display:block"
+                        src=" ./nfcalib/static/images/arrow.png" />
+                </div> -->
+                <div class="column is-four-fifths has-text-left" style="padding-left:5%">
+                    <h5 style="padding-left:0%">Our near-field calibration target</h5>
+                    <video id="target" autoplay muted loop playsinline height="2.5%" width="50%"
+                        style="border-color: hsl(94.9, 54.4%, 57.8%);border-style:solid; border-width:2%">
+                        <source src="./nfcalib/static/videos/ours.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop content">
+            <h2 class="title is-3 has-text-centered">Target Localization</h2>
+            <div class="columns is-centered is-vcentered has-text-centered">
+                <div class="column is-four-fifths has-text-right" style="padding-right:5%">
+                    <h5 style="padding-right:0%">Localization in RGB-D Data</h5>
+                    <video id="target" autoplay muted loop playsinline height="2.5%" width="50%">
+                        <source src="./nfcalib/static/videos/calib_photo.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+                <!-- <div class="column is-one-fifth is-vcentered">
+                    <img style="width:100%;margin-left:auto;margin-right:auto;display:block"
+                        src=" ./nfcalib/static/images/arrow.png" />
+                </div> -->
+                <div class="column is-four-fifths has-text-left" style="padding-left:5%">
+                    <h5 style="padding-left:0%">Localization in Radar Data</h5>
+                    <video id="target" autoplay muted loop playsinline height="2.5%" width="50%">
+                        <source src="./nfcalib/static/videos/calib_radar.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop content">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Supplementary Video</h2>
+                    <!-- <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0" frameborder="0"
+                  allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div> -->
+
+                    <video id="results" controls muted loop playsinline height="100%">
+                        <source src="./nfcalib/static/videos/supplementary.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-light is-small highlight">
+        <div class="hero-body is-light highlight">
+            <!-- <div class="container"> -->
+            <div class="columns">
+                <div class="column is-quarter">
+                    <h2 class="title is-4" style="text-align:center;">Paper</h2>
+                    <a href="./nfcalib/static/docs/paper.pdf">
+                        <img style="width:20%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+                            src=" ./nfcalib/static/docs/paper_thumbnail.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="column is-one-quarter"></div>
+        </div>
+
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@InProceedings{wirth2024nfcalib,
+    title={Automatic Spatial Calibration of Near-Field MIMO Radar With Respect to Optical Depth Sensors}, 
+    author={Vanessa Wirth and Johanna Bräunig and Danti Khouri and Florian Gutsche and Martin Vossiek and Tim Weyrich and Marc Stamminger},
+    year={2024},
+    eprint={2403.10981},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO},
+    url={https://arxiv.org/abs/2403.10981}, 
+}</code></pre>
+        </div>
+    </section>
+
+    <section class="section" id="Acknowledgements">
+        <div class="container is-max-desktop content">
+            <h2 class="title">Acknowledgements</h2>
+
+            <p>
+                This work was funded by the Deutsche
+                Forschungsgemeinschaft (DFG, German Research Foundation) – SFB 1483 – Project-ID 442419336, <a
+                    class="href-link" href="https://empkins.de">EmpkinS</a>.
+            </p>
+            <p>
+                The authors would like to thank the Rohde & Schwarz GmbH & Co. KG (Munich, Germany) for providing the
+                radar imaging devices.
+            </p>
+            <p>
+                The authors gratefully acknowledge
+                the scientific support and HPC resources provided by the
+                Erlangen National High Performance Computing Center of
+                the Friedrich-Alexander-Universität Erlangen-Nürnberg.
+            </p>
+        </div>
+    </section>
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <a class="icon-link" href="./nfcalib/static/docs/paper.pdf">
+                    <i class="fas fa-file-pdf" style="color:white"></i>
+                </a>
+                <a class="icon-link" href="https://github.com/vwirth" class="external-link" disabled>
+                    <i class="fab fa-github" style="color:white"></i>
+                </a>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a class="href-link" rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            Source code of this website is borrowed from the <a class="href-link"
+                                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
+                            project page.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
