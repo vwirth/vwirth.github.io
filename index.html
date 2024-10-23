@@ -12,11 +12,13 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  <link rel="stylesheet" href="./nfcalib/static/css/fontawesome.all.min.css">
+  <script defer src="./nfcalib/static/js/fontawesome.all.min.js"></script>
 </head>
 
 <body>
   <table
-    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    style="width:100%;max-width:1200px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
@@ -24,7 +26,7 @@
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr style="padding:0px">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <td style="padding:2.5%;width:73%;vertical-align:middle">
                   <p style="text-align:center">
                     <name>Vanessa Wirth</name>
                   </p>
@@ -35,11 +37,11 @@
                     I am part of the CRC <a href="https://www.empkins.de/">EmpkinS</a>.
                   </p>
                   <p>
-                    I work at the intersection of computer vision, computer graphics, and machine learning.
-                    My research interests are focused on the dynamic reconstruction of humans using multiple modalities,
-                    in particular radar.
+                    I work at the intersection of <b>computer vision, computer graphics, and machine learning</b>.
+                    My research interests are focused on <b>static and dynamic reconstruction using multiple modalities,
+                      in particular radar</b>.
                     Apart from theoretical
-                    research, I strive to apply my work to real-world scenarios such as medical applications.
+                    research, I strive to apply my work to real-world scenarios such as <b>medical applications</b>.
                   </p>
                   <p>
                     Before my Ph.D., I studied computer science at <a href="https://www.fau.eu">FAU
@@ -61,7 +63,8 @@
                       Scholar</a>
                     &nbsp/&nbsp
                     <a href="https://www.researchgate.net/profile/Vanessa-Wirth-2">ResearchGate</a>
-
+                    &nbsp/&nbsp
+                    <a href="https://www.youtube.com/@vwirthyt/videos">Youtube</a>
                   </p>
                 </td>
                 <td style="padding:2.5%;width:40%;max-width:40%">
@@ -71,6 +74,39 @@
               </tr>
             </tbody>
           </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>News</heading>
+                  <ul>
+                    <li>[10/2024] &#127881; I created a <a href="https://www.youtube.com/@vwirthyt/videos"><b>Youtube
+                          channel</b></a> &#128249; for my oral presentations
+                    </li>
+                    <li>[08/2024] &#127881; One paper accepted at IEEE Journal of Microwaves
+                    </li>
+                    <li>[07/2024] &#127881; Two papers accepted (IROS, EuRAD)
+                    </li>
+                    <li>[02/2024] &#127881; Our paper "ShaRPy" won the <b><a
+                          href="https://digitalrheumatology.org/winner-2024-digital-rheumatology-research-award/">Digital
+                          Rheumatology Award</a></b> for the most innovative publication in the field of digital
+                      rheumatology in the last two years
+                    </li>
+                    <li>[10/2024] &#127881; Our paper "A Realistic Radar Ray Tracing Simulator for Hand Pose Imaging"
+                      won the <b><a href="https://www.lhft.eei.fau.de/en/archive/8529">Young Engineer Price</a></b>
+                    </li>
+                    <li>[10/2023] &#127881; Our abstract pitch about "ShaRPy" at the IEEE BHI won the <b><a
+                          href="https://www.empkins.de/2023/10/25/empkins-research-awarded-at-ieee-bhi-conference/">Best
+                          Poster Award</a></b></li>
+                    <li>[07/2023] &#127881; Two papers accepted (ICCVW, EuRAD)
+                    </li>
+                  </ul>
+              </tr>
+            </tbody>
+          </table>
+
           <table
             style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
@@ -97,7 +133,8 @@
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
 
-                  <papertitle>A Radar-Based Concept for Simultaneous High-Resolution Imaging and Pixel-Wise Velocity Analysis for Tracking Human Motion
+                  <papertitle>A Radar-Based Concept for Simultaneous High-Resolution Imaging and Pixel-Wise Velocity
+                    Analysis for Tracking Human Motion
                   </papertitle>
                   <br>
                   <a href="https://www.lhft.eei.fau.de/en/archive/person/braeunig-johanna-m-sc">Johanna Bräunig</a>,
@@ -116,14 +153,16 @@
                   <a href="https://ieeexplore.ieee.org/document/10706625/authors">[IEEE Xplore]</a>
                   <p></p>
                   <p>
-                    We propose a novel concept for high-resolution MIMO radars to track the pixel-wise velocity alongside the depth of human motions.
+                    We propose a novel concept for high-resolution MIMO radars to track the pixel-wise velocity
+                    alongside the depth of human motions.
                   </p>
                 </td>
               </tr>
               <tr onmouseout="mfcalib_stop()" onmouseover="nfcalib_start()" bgcolor="#ffffd0">
                 <td style="padding:20px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <div class="two" id='nfcalib_image' style="width:100%"><video width=100% height=100% style="object-fit:fill" muted autoplay loop>
+                    <div class="two" id='nfcalib_image' style="width:100%"><video width=100% height=100%
+                        style="object-fit:fill" muted autoplay loop>
                         <source src="images/nfcalib.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                       </video></div>
@@ -142,7 +181,8 @@
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
 
-                  <papertitle>Automatic Spatial Calibration of Near-Field MIMO Radar With Respect to Optical Depth Sensors
+                  <papertitle>Automatic Spatial Calibration of Near-Field MIMO Radar With Respect to Optical Depth
+                    Sensors
                   </papertitle>
                   <br>
                   <strong>Vanessa Wirth</strong>,
@@ -153,12 +193,12 @@
                   <a href="https://weyri.ch/">Tim Weyrich*</a>,
                   <a href="https://www.lgdv.tf.fau.de/person/marc-stamminger/">Marc Stamminger*</a>
                   <p></p>
-                  <em>IROS</em>, 2024 <br>
+                  <em>IROS (Oral)</em>, 2024 <br>
                   <a href="https://vwirth.github.io/nfcalib">[Project Page]</a>
                   <a href="https://arxiv.org/abs/2403.10981">[arXiv]</a>
                   <p></p>
                   <p>
-                    We propose a spatial calibration method for high-resolution radars 
+                    We propose a spatial calibration method for high-resolution radars
                     that operate in the near-field, in conjunction with RGB-D cameras.
                     Our calibration enables close-range sensor fusion applications with millimeter precision.
                   </p>
@@ -172,7 +212,8 @@
                 </td>
                 <td style="padding:20px;width:75%;vertical-align:middle">
 
-                  <papertitle>An Efficient yet High-Performance Method for Precise Radar-Based Imaging of Human Hand Poses
+                  <papertitle>An Efficient yet High-Performance Method for Precise Radar-Based Imaging of Human Hand
+                    Poses
                   </papertitle>
                   <br>
                   <a href="https://www.lhft.eei.fau.de/en/archive/person/braeunig-johanna-m-sc">Johanna Bräunig</a>,
@@ -185,8 +226,8 @@
                   <a href="https://arxiv.org/abs/2406.13464">[arXiv]</a>
                   <p></p>
                   <p>
-                    We improve our <a href="https://ieeexplore.ieee.org/document/10233087">previous work</a> 
-                    for SOTA Radar reconstruction by utilizing three carrier frequencies. 
+                    We improve our <a href="https://ieeexplore.ieee.org/document/10233087">previous work</a>
+                    for SOTA Radar reconstruction by utilizing three carrier frequencies.
                     The proposed method enables real-time reconstructions with improved quality.
                   </p>
                 </td>
@@ -263,15 +304,18 @@
                   <a href="https://www.lgdv.tf.fau.de/person/marc-stamminger/">Marc Stamminger</a>
                   <p></p>
                   <em>ICCVW (Oral)</em>, 2023 <br>
-                  <a href="https://vwirth.github.io/sharpy">[Project Page]</a>
-                  <a href="https://arxiv.org/abs/2303.10042">[arXiv]</a>
-                  <a href="https://github.com/vwirth/sharpy">[Code]</a>
-                  <p></p>
-                  <p>
-                    We propose a novel hand pose and shape tracking pipeline that calculates the uncertainty, which
-                    remains in the parameter estimates. We apply this pipeline to hand function assessments in the
-                    medical domain.
-                  </p>
+                  <em><b>Winner of the <a
+                        href="https://digitalrheumatology.org/winner-2024-digital-rheumatology-research-award/">Digital
+                        Rheumatology Award 2024</a></b> <br>
+                    <a href="https://vwirth.github.io/sharpy">[Project Page]</a>
+                    <a href="https://arxiv.org/abs/2303.10042">[arXiv]</a>
+                    <a href="https://github.com/vwirth/sharpy">[Code]</a>
+                    <p></p>
+                    <p>
+                      We propose a novel hand pose and shape tracking pipeline that calculates the uncertainty, which
+                      remains in the parameter estimates. We apply this pipeline to hand function assessments in the
+                      medical domain.
+                    </p>
                 </td>
               </tr>
 
