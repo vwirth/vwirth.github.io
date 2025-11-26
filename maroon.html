@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="The MAROON dataset enables studying of different sensor modalities in direct comparison.">
+  <meta name="keywords" content="MAROON, Time of Flight, Radar Imaging, Radio Fre-
+quency, mmWave Imaging, MIMO Radar, Depth Camera, Spatial Calibration,
+Multimodal Sensor Fusion, Dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAROON: A Dataset for the Joint Characterization of Near-Field High-Resolution Radio-Frequency and Optical
+    Depth Imaging Techniques</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./maroon/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./maroon/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./maroon/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./maroon/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./maroon/static/css/index.css">
+  <!-- <link rel="icon" href="./maroon/static/images/favicon.png"> -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🌰</text></svg>">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./maroon/static/js/fontawesome.all.min.js"></script>
+  <script src="./maroon/static/js/bulma-carousel.min.js"></script>
+  <script src="./maroon/static/js/bulma-slider.min.js"></script>
+  <script src="./maroon/static/js/index.js"></script>
+  <script src="./maroon/static/js/o3dv.min.js"></script>
+
+  <script type='text/javascript'>
+    window.addEventListener('load', () => {
+      OV.Init3DViewerElements();
+    });
+  </script>
+</head>
+
+<body>
+  <a href="https://vwirth.github.io">Back to personal page</a>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <img class="is-left is-vcentered"
+              style="width:60%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
+              src=" ./maroon/static/images/maroon_logo.png" />
+            <h1 class="title is-1 publication-title">MAROON: A Dataset for the Joint Characterization of Near-Field
+              High-Resolution Radio-Frequency and Optical Depth Imaging Techniques</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://vwirth.github.io">Vanessa Wirth</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.lhft.eei.fau.de/en/archive/person/braeunig-johanna-m-sc">Johanna
+                  Bräunig</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.lgdv.tf.fau.de/person/2068/">Nikolai Hofmann</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.lhft.eei.fau.de/archive/person/prof-dr-ing-martin-vossiek">Martin
+                  Vossiek</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.dhss.phil.fau.de/person/prof-dr-tim-weyrich/">Tim Weyrich</a><sup>1,2,*</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.lgdv.tf.fau.de/person/marc-stamminger/">Marc Stamminger</a><sup>1,*</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Friedrich-Alexander-Universität Erlangen-Nürnberg,</span>
+              <span class="author-block"><sup>2</sup>University College London,</span>
+              <span class="author-block"><sup>*</sup>Both authors contributed equally to this research.</span>
+            </div>
+
+            <h2 style="text-align: center; font-size:1.6em; font-weight: 800;">arXiv</h2>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2411.00527" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./maroon/docs/supplementary.pdf" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="./maroon/static/docs/poster.pdf" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster (TODO)</span>
+                  </a>
+                </span> -->
+                <!-- <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fa fa-play"></i>
+                    </span>
+                    <span>Presentation (TODO)</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2411.00527" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/vwirth/maroon" class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://faubox.rrze.uni-erlangen.de/getlink/fi43P9pBvMVCGz5xJSfRRM/maroon_mini.zip"
+                    class="external-link button is-normal is-rounded">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data (Mini)</span>
+                  </a>
+                  <!-- Demo Link. -->
+                  <span class="link-block">
+                    <a href="https://maroon-dataset.github.io/" class="external-link button is-rounded rainbow-button">
+                      <span class="icon">
+                        <i class="fa fa-play"></i>
+                      </span>
+                      <span>Demo</span>
+                    </a>
+                  </span>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <img class="is-left is-vcentered"
+      style="width:80%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
+      src="./maroon/static/images/maroon_overview.png" />
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- Video Source
+          <video id="teaser" autoplay controls muted loop playsinline height="100%">
+          <source src="./sharpy/static/videos/results.webm" type="video/mp4">
+          </video>-->
+        <h2 class="subtitle has-text-centered">
+          The MAROON dataset enables studying of different sensor modalities in direct comparison.<br>
+          We currently provide a <b>mini version</b> of the dataset, releasing the <b>full version</b> after
+          paper acceptance.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section class="hero highlight is-small">
+    <div class="hero-body">
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-0000">
+            <div class="online_3d_viewer"
+                 model="/maroon/static/models/mesh_masked_smoothed.obj">
+            </div>
+          </div>
+          <div class="item item-0001">
+            <div class="online_3d_viewer"
+                 model="/maroon/static/models/mesh_masked_smoothed.obj">
+            </div>
+          </div>
+          <div class="item item-0002">
+            <div class="online_3d_viewer"
+                 model="/maroon/static/models/mesh_masked_smoothed.obj">
+            </div>
+          </div>
+          <div class="item item-0004">
+            <div class="online_3d_viewer"
+                 model="/maroon/static/models/mesh_masked_smoothed.obj">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>-->
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Demo Viewer (try
+        <a href="https://maroon-dataset.github.io/" class="external-link button is-rounded rainbow-button">
+          <span class="icon">
+            <i class="fa fa-play"></i>
+          </span>
+          <span>here</span>
+        </a>
+        )
+      </h2>
+      <a href="https://maroon-dataset.github.io/">
+        <img style="width:70%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+          src=" ./maroon/static/images/demo.png" />
+      </a>
+    </div>
+  </section>
+
+
+  <section class="hero highlight is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop content">
+        <h2 class="title is-3 has-text-centered">
+          <a href="https://github.com/vwirth/maroon">Data Viewer (Github)</a>
+        </h2>
+        <div class="columns is-centered is-vcentered has-text-centered">
+          <div class="column">
+            <img class="is-left is-vcentered"
+              style="width:80%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
+              src=" ./maroon/static/images/viewer.gif" />
+            <!-- <span>Can do this</span> -->
+          </div>
+          <div class="column">
+            <img class="is-left is-vcentered"
+              style="width:80%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
+              src=" ./maroon/static/images/viewmode.gif" />
+            <!-- <span>And that</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Utilizing the complementary strengths of wavelength-specific range or depth sensors is crucial for robust
+              computer-assisted tasks such as autonomous driving. Despite this, there is still little research done at
+              the intersection of optical depth sensors and radars operating close range, where the target is decimeters
+              away from the sensors. Together with a growing interest in high-resolution imaging radars operating in the
+              near field, the question arises how these sensors behave in comparison to their traditional optical
+              counterparts.
+            </p>
+            <p>
+              In this work, we take on the unique challenge of jointly characterizing depth imagers from both, the
+              optical and radio-frequency domain using a multimodal spatial calibration. We collect data from four depth
+              imagers, with three optical sensors of varying operation principle and an imaging radar. We provide a
+              comprehensive evaluation of their depth measurements with respect to distinct object materials,
+              geometries, and object-to-sensor distances. Specifically, we reveal scattering effects of partially
+              transmissive materials and investigate the response of radio-frequency signals. All object measurements
+              will be made public in form of a multimodal dataset, called MAROON.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="hero highlight is-small">
+    <div class="hero-body is-light">
+      <!-- <div class="container"> -->
+      <div class="columns">
+        <div class="column is-one-quarter"></div>
+        <div class="column is-one-quarter">
+          <h2 class="title is-5" style="text-align:center;">Paper</h2>
+
+          <a href="./maroon/static/docs/paper.pdf">
+            <img
+              style="width:70%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+              src=" ./maroon/static/docs/paper_thumbnail.png" />
+          </a>
+
+        </div>
+
+        <div class="column is-one-quarter">
+          <h2 class="title is-5" style="text-align:center;">Supplementary</h2>
+          <a href="./maroon/static/docs/supplementary.pdf">
+            <img
+              style="width:70%;margin-left:auto;margin-right:auto;display:block;border-color: grey;border-style:solid"
+              src=" ./maroon/static/docs/supplementary_thumbnail.png" />
+          </a>
+        </div>
+      </div>
+      <div class="column is-one-quarter"></div>
+    </div>
+
+  </section>
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop content">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Presentation (TODO)</h2>
+          <div class="publication-video">
+            <iframe src="https://www.youtube.com/embed/kWdoqi2cPt8" title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{wirth2025maroondatasetjointcharacterization,
+        title={MAROON: A Dataset for the Joint Characterization of Near-Field High-Resolution Radio-Frequency and Optical Depth Imaging Techniques}, 
+        author={Vanessa Wirth and Johanna Bräunig and Nikolai Hofmann and Martin Vossiek and Tim Weyrich and Marc Stamminger},
+        year={2025},
+        eprint={2411.00527},
+        archivePrefix={arXiv},
+        primaryClass={eess.IV},
+        url={https://arxiv.org/abs/2411.00527}, 
+      }</code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="Acknowledgements">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgements</h2>
+
+      <p>
+      </p>
+      <p>
+        The authors would like to thank the Rohde &amp; Schwarz GmbH &amp; Co.
+        KG (Munich, Germany) for providing the radar imaging devices.
+      </p>
+      <p>
+        This work was funded by the Deutsche
+        Forschungsgemeinschaft (DFG, German Research Foundation) – SFB 1483 – Project-ID 442419336, <a
+          href="https://empkins.de">EmpkinS</a>.
+      </p>
+      <p>
+        The authors gratefully acknowledge the scientific support and
+        HPC resources provided by the Erlangen National High Performance
+        Computing Center of the Friedrich-Alexander-Universität Erlangen-
+        Nürnberg.
+      </p>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="./maroon/static/docs/paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/vwirth" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Source code of this website is stolen from the <a
+                href="https://github.com/nerfies/nerfies.github.io">nerfies</a>
+              project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
