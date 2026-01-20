@@ -137,22 +137,31 @@ Multimodal Sensor Fusion, Dataset">
                 </span>
                 <!-- Dataset Link. -->
                 <span class="link-block">
-                  <a href="https://faubox.rrze.uni-erlangen.de/getlink/fi43P9pBvMVCGz5xJSfRRM/maroon_mini.zip"
-                    class="external-link button is-normal is-rounded">
+                  <a href="https://zenodo.org/records/18254440" class="external-link button is-normal is-rounded">
                     <span class="icon">
                       <i class="far fa-images"></i>
                     </span>
-                    <span>Data (Mini)</span>
+                    <span>Dataset Full</span>
                   </a>
-                  <!-- Demo Link. -->
+                  <!-- Dataset Link. -->
                   <span class="link-block">
-                    <a href="https://maroon-dataset.github.io/" class="external-link button is-rounded rainbow-button">
+                    <a href="https://faubox.rrze.uni-erlangen.de/getlink/fi43P9pBvMVCGz5xJSfRRM/maroon_mini.zip"
+                      class="external-link button is-normal is-rounded">
                       <span class="icon">
-                        <i class="fa fa-play"></i>
+                        <i class="far fa-images"></i>
                       </span>
-                      <span>Demo</span>
+                      <span>Dataset Mini</span>
                     </a>
-                  </span>
+                    <!-- Demo Link. -->
+                    <span class="link-block">
+                      <a href="https://maroon-dataset.github.io/"
+                        class="external-link button is-rounded rainbow-button">
+                        <span class="icon">
+                          <i class="fa fa-play"></i>
+                        </span>
+                        <span>Demo</span>
+                      </a>
+                    </span>
               </div>
 
 
@@ -165,7 +174,7 @@ Multimodal Sensor Fusion, Dataset">
 
   <section class="hero teaser">
     <img class="is-left is-vcentered"
-      style="width:80%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
+      style="width:60%;margin-left:auto;margin-right:auto;display:block;margin-bottom:1.5rem"
       src="./maroon/static/images/maroon_overview.png" />
     <div class="container is-max-desktop">
       <div class="hero-body">
@@ -174,9 +183,10 @@ Multimodal Sensor Fusion, Dataset">
           <source src="./sharpy/static/videos/results.webm" type="video/mp4">
           </video>-->
         <h2 class="subtitle has-text-centered">
-          The MAROON dataset enables studying of different sensor modalities in direct comparison.<br>
-          We currently provide a <b>mini version</b> of the dataset, releasing the <b>full version</b> after
-          paper acceptance.
+          The MAROON dataset enables studying of different sensor modalities in direct comparison. We provide a mini
+          version containing one object (~1GB), as well as the full dataset (~200GB) on Zenodo, which can be downloaded
+          using
+          the instructions below.
         </h2>
       </div>
     </div>
@@ -285,6 +295,136 @@ Multimodal Sensor Fusion, Dataset">
       <!--/ Abstract. -->
     </div>
   </section>
+
+  <section class="section info">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Dataset</h2>
+          <div class="content has-text-justified">
+            <p>
+              The full dataset is available on Zenodo, where it is split into several .zip files:
+            </p>
+            <p>
+            <table>
+              <tr>
+                <td class="leftrow">
+                  <b>Required</b>
+                </td>
+                <td>
+                  <code>0_maroon_v2_meta.zip</code>
+                </td>
+                <td>
+                  Description
+                </td>
+              </tr>
+              <!-- <b>[Required]</b><code>0_maroon_v2_meta.zip</code> Contains the metadata and calibration files about
+                labeled objects. -->
+              </li>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>On Demand</b>
+                </td>
+                <td>
+                  <code>1_maroon_v2_radar_raw.zip</code>
+                </td>
+                <td>
+                  Contains the raw radar measurements, on which reconstruction can be performed by using
+                  <b><a href="https://github.com/vwirth/maroon">this repository</a></b>.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>Optional</b>
+                </td>
+                <td>
+                  <code>1_maroon_radar_cached_1.zip</code>,<br>
+                  <code>1_maroon_radar_cached_2.zip</code>,<br>
+                  <code>1_maroon_radar_cached_3.zip</code>
+                </td>
+                <td>
+                  Contains the cached reconstructions. It is useful to download these in case you do not have a powerful
+                  GPU or don't want to wait for reconstruction to be performed first.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>On Demand</b>
+                </td>
+                <td>
+                  <code>2_maroon_v2_kinect.zip</code>
+                </td>
+                <td>
+                  Contains the optical time-of-flight measurements (RGB, Infrared, Depth) of Microsoft's Kinect Azure
+                  Camera, with mask/segmentation annotations.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>On Demand</b>
+                </td>
+                <td>
+                  <code>3_maroon_v2_realsense.zip</code>
+                </td>
+                <td>
+                  Contains the optical active stereo measurements (RGB, Depth) of the Intel Realsense D435i, with
+                  mask/segmentation annotations.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>On Demand</b>
+                </td>
+                <td>
+                  <code>4_maroon_v2_zed.zip</code>
+                </td>
+                <td>
+                  Contains the optical passive stereo measurements (RGB, Depth) of Stereolabs' ZED camera, with
+                  mask/segmentation annotations.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>On Demand</b>
+                </td>
+                <td>
+                  <code>5_maroon_v2_mvs.zip</code>
+                </td>
+                <td>
+                  Contains the ground-truth measurements obtained from a Multi View Stereo (MVS) system of 5 DSLR
+                  cameras, with mask/segmentation annotations.
+                </td>
+              </tr>
+
+              <tr>
+                <td class="leftrow" style="width:20%">
+                  <b>Optional</b>
+                </td>
+                <td>
+                  <code>6_maroon_v2_extra.zip</code>
+                </td>
+                <td>
+                  Contains the calibration measurements, and additional measurements of the empty measurement room,
+                  without any object placed in front.
+                </td>
+              </tr>
+            </table>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+  <section class="section"></section>
 
   <section class="hero highlight is-small">
     <div class="hero-body is-light">
